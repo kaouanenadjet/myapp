@@ -22,7 +22,7 @@ import './App.css';
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        > 
+        >  react 
         </a>
       </header>
     </div>
