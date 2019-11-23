@@ -11,6 +11,15 @@ import Welcome from './Welcome';
 }  
 }
 export default App;
+/*class App extends Component
+ {
+   render()  {
+  return ( <Welcome/>     
+    
+  );
+}  
+}
+export default App;*/
 /*<div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"  />
