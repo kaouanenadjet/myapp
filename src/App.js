@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Welcome from './Welcome'; 
  class App extends Component
  {
    render()  {
-  return (
-    <div className="App">
+  return ( <Welcome/>     
+    
+  );
+}  
+}
+export default App;
+/*<div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"  />
         <p>
         <h1> 
-          bienvenue a ESI MANAGER 
+          bienvenue à ESI MANAGER 
 
         </h1>  <h3> 
           s'authentifier en tant que :
@@ -22,12 +28,7 @@ import './App.css';
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >  LEARN REACT
+        >  
         </a>
       </header>
-    </div>
-  );
-}  
-}
-
-export default App;
+    </div>*/
