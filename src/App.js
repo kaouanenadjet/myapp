@@ -5,7 +5,8 @@ import Welcome from './Welcome';
  class App extends Component
  {
    render()  {
-  return ( <Welcome/>     
+  return ( <Welcome/>    
+          //<Home/>
     
   );
 }  
