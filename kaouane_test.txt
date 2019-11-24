@@ -1,1 +1,2 @@
 This Project Contains The Different Pages Of the Web-App seperatly to be combined later :) 
+Reminder To add The Background and The Logo To The app :') 
