@@ -31,4 +31,4 @@ import React, {Component} from 'react';
 
      }
  } 
- export default Welcome;
+ export default Welcome; 
