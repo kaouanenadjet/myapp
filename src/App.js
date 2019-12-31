@@ -1,30 +1,22 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import Home from './Home';
+import Ajouter from './Ajouter';
+import Login from './Login';
+import Footer from './Footer';
+import Profile from './Profile';
+
  class App extends Component
  {
    render()  {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"  />
-        <p>
-        <h1> 
-          bienvenue a ESI MANAGER 
+      <Header/>
+      <Profile/>
+      <Footer/>
 
-        </h1>  <h3> 
-          s'authentifier en tant que :
-          administrateur/enseignant/etudiant
-        </h3> 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >  LEARN REACT
-        </a>
-      </header>
     </div>
   );
 }  
