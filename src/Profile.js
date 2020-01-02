@@ -3,10 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
+import {BrowserRouter as Router,Link} from 'react-router-dom';
+import Route from 'react-router-dom/Route';
 class Profile extends Component {
   render() {
   return (
-
+    /**
+     * Boutouns de routage pour accéder au formulaires d'ajout et de saisie 
+     */
     <div ClassName="Profile" style={{width:'full'}}>     
      <body>
        
@@ -20,10 +24,18 @@ class Profile extends Component {
     <hr/>
     <p class="lead">
     <span> 
-        <Button href=""  name="connecter" size="lg" variant="dark">Ajouter Etudiant</Button>
+        <Button  name="connecter" size="lg" variant="dark">
+        <Link to="/ajouter" >
+          Ajouter Etudiant
+        </Link>
+        </Button>
         <br/>
         <br/>
-        <Button href=""  name="connecter" size="lg" variant="dark">Saisir Notes    </Button>
+        <Button   name="connecter" size="lg" variant="dark">
+        <Link to="/saisir">  
+          Saisir Les Notes   
+        </Link>  
+         </Button>
     </span>
     </p>
     </div>
