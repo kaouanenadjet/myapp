@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Saisir.js</title>
+    <title>JSDoc: Source: Ajouter.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Saisir.js</h1>
+    <h1 class="page-title">Source: Ajouter.js</h1>
 
     
 
@@ -31,39 +31,35 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Login from './Login';
-import Home from './Home';
-import Ajouter from './Ajouter';
+import Button from 'react-bootstrap/Button';  //import button
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
-class Saisir extends Component {
+class Ajouter extends Component {
   /**
-   * Constructeur de la classe 
+   * Ajouter 
    */
   /**
    * 
-   * @param {String} nom      le nom de l'étudiant  
+   * @param {String} nam      le nom de l'étudiant  
    * @param {String} prename  prénom de l'étudiant
-   * @param {Number} groupe   numero de groupe
-   * @param {Double} analyse  note d'analyse
-   * @param {Double} algo   note d'alsds 
-   * @param {String} igl  note d'igl
-   * @param {String} dynam  note d'alsdd
-   * @param {String} moyen  moyenne totale
+   * @param {String} year   année d'étude
+   * @param {Integer} matricule  matricule d'étudiant
+   * @param {string} mail   l'adresse mail d'etudiant
+   * @param {String} password  mot de passe de compte
+   * 
    */
+  
   constructor (props){
     super(props)
     this.state={
-      nom:null,
-      prename:null,
-      groupe:null,
-      analyse:null,
-      algo:null,
-      igl:null,
-      dynam:null,
-      moyen:null
+      nam:null,
+      pren:null,
+      mail:null,
+      password:null,
+      matricule:null,
+      year:null
+      
       
     }
   }
@@ -96,7 +92,7 @@ class Saisir extends Component {
       [event.target.name]:event.target.value
     })
   }
-  /**
+/**
  * Alert 
  */
 submit = () => {
@@ -116,24 +112,22 @@ submit = () => {
   });
 };
 /**
- * renderer of the content 
+ * rederer of the content wrapped
  */
 render() {
   /**
      * declaration des variables pour recupérer les données du formulaire
      */
-    const {nom}=this.state    
-    const {prename}=this.state 
-    const {groupe}=this.state 
-    const {analyse}=this.state 
-    const {igl}=this.state 
-    const {algo}=this.state 
-    const {dynam}=this.state 
-    const {moyen}=this.state 
-
+    const {nam}=this.state    
+    const {pren}=this.state 
+    const {year}=this.state 
+    const {matricule}=this.state 
+    const {mail}=this.state 
+    const {password}=this.state 
+   
   return (
-      
-    &lt;div className="Saisir">
+
+    &lt;div className='Ajouter'>
     &lt;body style={{ width: '1350px' }} >
         &lt;div style={{marginTop:'2%'}}>
         &lt;div class="container-fluid bg " >
@@ -141,62 +135,55 @@ render() {
         &lt;div class="col-md-4 col-sm-4 col-xs-8">&lt;/div>
     
         &lt;div class="col-md-4 col-sm-4 col-xs-8">
-        &lt;Form style={{margintop: '-40%',border:'3px',borderStyle:'solid' , borderColor:'#20232a', padding: '20px', }}
+        &lt;Form  style={{margintop: '-40%',border:'3px',borderStyle:'solid' , borderColor:'#20232a', padding: '20px', }}
          onSubmit={this.handleSubmit}
         >
-        &lt;h1 align="center"style={{color: '#088A85'}}> Saisir Les Notes de L'étudiant  &lt;/h1 > 
+        &lt;h1 align="center"style={{color: '#088A85'}}> Introduire les Informations de L'étudiant  &lt;/h1 > 
         &lt;hr/>
         &lt;Form.Row>
         &lt;Form.Group  controlId="name">
         &lt;Form.Label>Nom&lt;/Form.Label>
-        &lt;Form.Control type="username" placeholder="Mark" name="nom" onChange={this.handleInputChange} />
+        &lt;Form.Control type="username" placeholder="Mark" name="nam" onChange={this.handleInputChange}/>
         &lt;/Form.Group>
 
         &lt;Form.Group  controlId="prename">
         &lt;Form.Label>Prénom&lt;/Form.Label>
-        &lt;Form.Control type="username" placeholder="Otto" name="prename" onChange={this.handleInputChange}/>
+        &lt;Form.Control type="username" placeholder="Otto" name="pren" onChange={this.handleInputChange} />
         &lt;/Form.Group>
         &lt;/Form.Row>
 
-        &lt;Form.Group controlId="groupe">
-        &lt;Form.Label>Groupe&lt;/Form.Label>
-        &lt;Form.Control as="select" name="groupe" onChange={this.handleInputChange}>
+        &lt;Form.Group controlId="mail">
+        &lt;Form.Label>Email&lt;/Form.Label>
+        &lt;Form.Control type="email" placeholder="Email" name="mail" onChange={this.handleInputChange}/>
+        &lt;/Form.Group>
+
+        &lt;Form.Group controlId="passwd">
+        &lt;Form.Label>Mot De Passe&lt;/Form.Label>
+        &lt;Form.Control type="password" placeholder="Mot De Passe" name="password" onChange={this.handleInputChange} />
+        &lt;/Form.Group>
+
+        &lt;Form.Row>
+        &lt;Form.Group controlId="matricule">
+        &lt;Form.Label> Matricule&lt;/Form.Label>
+        &lt;Form.Control type="username" placeholder="12345" name="matricule" onChange={this.handleInputChange} />
+        &lt;/Form.Group>
+        &lt;p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/p>
+        &lt;Form.Group  controlId="annee">
+        &lt;Form.Label>Année D'étude&lt;/Form.Label>
+        &lt;Form.Control as="select" name="year" onChange={this.handleInputChange}>
         &lt;option>Choisir...&lt;/option>
-        &lt;option>1&lt;/option>
-        &lt;option>2&lt;/option>
-        &lt;option>3&lt;/option>
-        &lt;option>4&lt;/option>
+        &lt;option>1CP&lt;/option>
+        &lt;option>2CP&lt;/option>
+        &lt;option>1CS&lt;/option>
+        &lt;option>2CS&lt;/option>
+        &lt;option>3CS&lt;/option>
+        &lt;Form.Control />
         &lt;/Form.Control>
         &lt;/Form.Group>
-        &lt;h3>Modules :&lt;/h3>
-        &lt;hr/>
-        &lt;Form.Group controlId="analyse">
-        &lt;Form.Label>Analyse :&lt;/Form.Label>
-        &lt;Form.Control type="username" placeholder="Note Sur 20" name="analyse" onChange={this.handleInputChange}/>
-        &lt;/Form.Group>
+        &lt;/Form.Row>
 
-        &lt;Form.Group controlId="algo">
-        &lt;Form.Label>ALSDS :&lt;/Form.Label>
-        &lt;Form.Control type="username" placeholder="Note Sur 20" name="algo" onChange={this.handleInputChange}/>
-        &lt;/Form.Group>
-
-        &lt;Form.Group controlId="igl">
-        &lt;Form.Label> IGL :&lt;/Form.Label>
-        &lt;Form.Control type="username" placeholder="Note Sur 20" name="igl" onChange={this.handleInputChange}/>
-        &lt;/Form.Group>
-
-        &lt;Form.Group controlId="allgo">
-        &lt;Form.Label>ALSDD :&lt;/Form.Label>
-        &lt;Form.Control type="username" placeholder="Note Sur 20" name="dynam" onChange={this.handleInputChange}/>
-        &lt;/Form.Group>
-
-        &lt;Form.Group controlId="moyenne">
-        &lt;Form.Label>Moyenne :&lt;/Form.Label>
-        &lt;Form.Control type="username" placeholder="Note Sur 20" name="moyen" onChange={this.handleInputChange}/>
-        &lt;/Form.Group>
-
-        &lt;Button variant="dark" type="submit" style={{ marginLeft:"120px"}} onClick={this.submit}>
-           Sauvegarder
+        &lt;Button variant="dark" type="submit" style={{ marginLeft:"120px"}} onClick={this.submit} >
+         Sauvegarder
         &lt;/Button>
         &lt;/Form>
         &lt;br/>
@@ -214,11 +201,10 @@ render() {
 
     &lt;/div>
     
-    
   );
 }
 }
-export default Saisir;
+export default Ajouter;
 </code></pre>
         </article>
     </section>
