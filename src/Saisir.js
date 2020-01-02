@@ -7,7 +7,8 @@ import Button from 'react-bootstrap/Button';
 import Login from './Login';
 import Home from './Home';
 import Ajouter from './Ajouter';
- 
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 class Saisir extends Component {
   /**
@@ -45,6 +46,8 @@ class Saisir extends Component {
    */
     handleSubmit=(event)=>{
         event.preventDefault()
+        const data=this.state
+        console.log(data)
     }
   /**
    * méthode pour sauvgarder les données 
@@ -65,6 +68,28 @@ class Saisir extends Component {
       [event.target.name]:event.target.value
     })
   }
+  /**
+ * Alert 
+ */
+submit = () => {
+  confirmAlert({
+    title: 'Confirm to submit',
+    message: 'Are you sure to do this.',
+    buttons: [
+      {
+        label: 'Yes',
+        onClick: () => alert('Click Yes')
+      },
+      {
+        label: 'No',
+        onClick: () => alert('Click No')
+      }
+    ]
+  });
+};
+/**
+ * renderer of the content 
+ */
 render() {
   /**
      * declaration des variables pour recupérer les données du formulaire
@@ -142,7 +167,7 @@ render() {
         <Form.Control type="username" placeholder="Note Sur 20" name="moyen" onChange={this.handleInputChange}/>
         </Form.Group>
 
-        <Button variant="dark" type="submit" style={{ marginLeft:"120px"}}>
+        <Button variant="dark" type="submit" style={{ marginLeft:"120px"}} onClick={this.submit}>
            Sauvegarder
         </Button>
         </Form>

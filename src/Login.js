@@ -63,7 +63,6 @@ class Login extends Component {
      * declaration des variables pour recupérer les données du formulaire
      */
     const {email}=this.state
-    
     const {passwd}=this.state
   return (
    /**
