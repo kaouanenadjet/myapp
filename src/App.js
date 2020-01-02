@@ -14,7 +14,7 @@ import Profile from './Profile';
   return (
     <div className="App">
       <Header/>
-      <Profile/>
+      <Home/>
       <Footer/>
 
     </div>

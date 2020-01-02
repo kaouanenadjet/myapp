@@ -3,17 +3,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
+/**
+ * Accueil De L'application
+ */
+
+/**
+ * Description General de l'application et lien pour l'authentification
+ */ 
 class Home extends Component {
   render() {
   return (
-
+     
     <div ClassName="Home" style={{width:'full'}}>     
      <body style={{
         width: '1350px'
       }} >
        
     <div class="jumbotron" style={{textAlign: 'center', backgroundColor: 'white',alignContent:'center',marginTop:'10%'}}>
-   
     <h1 class="display-4" >Bienvenue à Esi Manager</h1>
     <br/>
     <h3 class="display-5" style={{color:'#088A85'}}>Gestion De Scolarité</h3>
